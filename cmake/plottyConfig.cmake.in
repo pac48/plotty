@@ -1,0 +1,15 @@
+# Set the package name and version
+set(plotty_NAME plotty)
+set(plotty_VERSION 0.1.4)
+
+# Set the installation prefix
+set(plotty_INSTALL_PREFIX /usr/local)
+
+# Add the include directories
+set(plotty_INCLUDE_DIRS /usr/local/include)
+
+find_package(glog REQUIRED)
+find_package(Eigen3 REQUIRED)
+# Add the libraries to link against
+set(plotty_LIBRARIES /usr/local/lib/libplotty.a Eigen3::Eigen glog::glog)
+

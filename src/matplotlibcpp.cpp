@@ -92,13 +92,9 @@ struct Interpreter {
 
  private:
   Interpreter() {
-#if PYTHON_VERSION_MAJOR == 2
-#define ToPyStr(X) PyString_FromString(X)
-    char name[] = "plotting";
-#else
 #define ToPyStr(X) PyUnicode_FromString(X)
     const wchar_t name[] = L"plotting";
-#endif
+
     Py_SetProgramName(name);  // optional but recommended
     Py_Initialize();
 
